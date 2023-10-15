@@ -10,18 +10,15 @@ const Routers = () => {
     <div>
       <Routes>
         {/* This Route renders the Homepage component when the user navigates to the root URL ("/") */}
-        <Route path="/" element={<Homepage></Homepage>}></Route>
-        
+        <Route path="/" element={<Homepage />}></Route>
+
         {/* This Route renders the MyflashCard component when the user navigates to the "/myflashcards/" URL */}
-        <Route
-          path="/myflashcards/"
-          element={<MyflashCard></MyflashCard>}
-        ></Route>
-        
+        <Route path="/myflashcards/" element={<MyflashCard />}></Route>
+
         {/* This Route renders the MyflashcardDetails component when the user navigates to the "/flashCardDetails/:id" URL, where ":id" is a parameter indicating the ID of a specific flashcard */}
         <Route
           path="/flashCardDetails/:id"
-          element={<MyflashcardDetails></MyflashcardDetails>}
+          element={<MyflashcardDetails />}
         ></Route>
       </Routes>
     </div>
