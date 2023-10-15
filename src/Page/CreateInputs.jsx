@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik"; // importing Formik components
 import { useDispatch } from "react-redux"; // importing useDispatch hook from react-redux library
@@ -12,6 +12,7 @@ import toast from "react-hot-toast"; // For alert messages
 import { useNavigate } from "react-router-dom";
 
 const CreateInputs = () => {
+  const [localValues, setLocalValues] = useState(null);
   const initialValues = {
     id: uuidv4(),
     groupname: "",
@@ -23,12 +24,11 @@ const CreateInputs = () => {
   const navigate = useNavigate();
   const onSubmit = (values) => {
     dispatch(addCard(values));
-    // console.log(values);
-
-    //console.log(formValues);
+    setLocalValues(values);
+    console.log(localValues);
 
     toast.success("Card submitted successfully!", "Success");
-    //  window.location.hash = "/myflashcards";
+
     navigate("/myflashcards");
   };
 
