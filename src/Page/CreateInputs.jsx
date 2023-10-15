@@ -24,7 +24,7 @@ const CreateInputs = () => {
   const onSubmit = (values) => {
     dispatch(addCard(values));
 
-    toast.success("Card submitted successfully!", "Success");
+    toast.success("Card created successfully!", "Success");
 
     navigate("/myflashcards");
   };
