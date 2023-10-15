@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik"; // importing Formik components
 import { useDispatch } from "react-redux"; // importing useDispatch hook from react-redux library
@@ -23,12 +23,9 @@ const CreateInputs = () => {
   const navigate = useNavigate();
   const onSubmit = (values) => {
     dispatch(addCard(values));
-    // console.log(values);
-
-    //console.log(formValues);
 
     toast.success("Card submitted successfully!", "Success");
-    //  window.location.hash = "/myflashcards";
+
     navigate("/myflashcards");
   };
 
