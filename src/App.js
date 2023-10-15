@@ -7,11 +7,6 @@ import store from "./Page/Redux/store";
 import { Provider } from "react-redux";
 
 const App = () => {
-  const newFeature = function () {
-    console.log("new features");
-  };
-
-  newFeature();
   return (
     <div>
       <Provider store={store}>
