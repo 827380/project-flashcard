@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import ShareModal from "./ModalWindow";
 import {
   MdOutlinePrint,
@@ -36,14 +36,6 @@ const FlashCardDetails = () => {
 
   const cards = useSelector((state) => state.card.cards);
   console.log(cards);
-
-  // Find the card with the matching `cardId` in the list of cards.
-  // const card1 = result ? result.id == cardId : null;
-  // console.log(card1);
-  // let card;
-  // if (card1) {
-  //   card = result;
-  // }
 
   const [slideIndex, setSlideIndex] = useState(1);
   const [imageURL, setImageURL] = useState(

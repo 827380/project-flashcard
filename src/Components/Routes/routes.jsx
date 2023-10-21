@@ -22,6 +22,7 @@ const Routers = () => {
           path="/flashCardDetails/:id"
           element={<MyflashcardDetails />}
         ></Route>
+
         {/* This route render the PageNotFound component when user write some another URL that is not in this routes  */}
         <Route path="*" element={<PageNotFound />} />
       </Routes>
