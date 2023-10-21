@@ -15,7 +15,7 @@ root.render(
   <div>
     <BrowserRouter>
       <Provider store={store}>
-        <Navbar /> {/* render Navbar component */}
+        <Navbar />
         <Routers /> {/* render Routes component */}
         <Toaster
           position="top-center"

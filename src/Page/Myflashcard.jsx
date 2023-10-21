@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import SingleFlashCard from "../Components/SingleFlashCard";
 import "../index.css";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { GiClick } from "react-icons/gi";
 
@@ -11,16 +10,6 @@ const Myflashcard = () => {
   console.log(c);
   let cards = [];
   c.map((card) => (card.description !== "" ? cards.push(card) : ""));
-
-  // // console.log(storedData);
-
-  // if (parsedData) {
-  //   // const parsedData = JSON.parse(storedData);
-  //   console.log(parsedData);
-  //   cards.push(parsedData);
-  // }
-
-  // console.log(cards);
 
   return (
     <div className="bg-purple-100 rounded-lg p-4">
