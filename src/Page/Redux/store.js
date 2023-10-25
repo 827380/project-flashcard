@@ -3,9 +3,10 @@ import { loadFromLocalStorage } from "../../hooks/localStorage";
 import cardReducer from "./mySlice";
 
 const preloadedState = loadFromLocalStorage();
-export default configureStore({
+const store = configureStore({
   reducer: {
     card: cardReducer,
   },
   preloadedState,
 });
+export default store;

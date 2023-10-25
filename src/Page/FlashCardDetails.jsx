@@ -14,24 +14,14 @@ import { Link, useParams } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const FlashCardDetails = () => {
-  // Get the parameters from the URL using the `useParams` hook from React Router.
-  // const params = useParams();
-  // console.log(params);
-
   // Get the `id` parameter from the URL using the `useParams` hook.
   const { id } = useParams();
   console.log(id);
-
-  // Get the `dispatch` function from the Redux store using the `useDispatch` hook.
-  // const dispatch = useDispatch();
 
   // Get the current location using the `useLocation` hook from React Router.
   const location = useLocation();
   // console.log(location.pathname);
 
-  // Get the `cardId` from the last segment of the current URL path.
-  const cardId = location.pathname.split("/").pop();
-  console.log(cardId);
   // Get the list of cards from the Redux store using the `useSelector` hook.
 
   const cards = useSelector((state) => state.card.cards);
@@ -39,11 +29,11 @@ const FlashCardDetails = () => {
 
   const [slideIndex, setSlideIndex] = useState(1);
   const [imageURL, setImageURL] = useState(
-    "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YXBwbGUlMjBsYXB0b3B8ZW58MHx8MHx8&w=1000&q=80"
+    "https://images.unsplash.com/photo-1697525930011-0cc03edfbb3d?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   );
-
   //state for handling popup modal to open and close.
   const [openModal, setOpenModal] = useState(false);
+
   const nextSlide = (card) => {
     if (card && card.flashterms && slideIndex !== card.flashterms.length) {
       setSlideIndex(slideIndex + 1);
@@ -56,20 +46,19 @@ const FlashCardDetails = () => {
     }
   };
 
-  const handleModalOpen = () => {
-    setOpenModal(true);
-  };
-
-  const handleModalClose = () => {
-    setOpenModal(false);
-  };
-
   const prevSlide = (card) => {
     if (slideIndex > 1) {
       setSlideIndex(slideIndex - 1);
     } else if (slideIndex === 1) {
       setSlideIndex(card.flashterms.length);
     }
+  };
+  const handleModalOpen = () => {
+    setOpenModal(true);
+  };
+
+  const handleModalClose = () => {
+    setOpenModal(false);
   };
 
   return (
@@ -109,9 +98,10 @@ const FlashCardDetails = () => {
                               ? "my-3 px-1 flex justify-center rounded-md bg-red-100 text-red-500"
                               : "my-3 text-gray-500"
                           }
-                          onClick={() => nextSlide(index + 1)}
                         >
-                          {card.flashterms[index].term}
+                          <button onClick={() => setSlideIndex(index + 1)}>
+                            {card.flashterms[index].term}
+                          </button>
                         </li>
                       ))}
                     </ul>
