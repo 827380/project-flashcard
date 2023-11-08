@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux"; // importing useDispatch hook from react-redux library
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { deleteCard } from "../Page/Redux/mySlice"; // importing deleteCard function from mySlice.js file
+import { deleteCard } from "./Redux/mySlice"; // importing deleteCard function from mySlice.js file
 import { GrView } from "react-icons/gr"; // importing GrView icon from react-icons/gr library
 import { MdDelete } from "react-icons/md"; // importing MdDelete icon from react-icons/md library
 //import { useState } from "react"; // importing useState hook from react library

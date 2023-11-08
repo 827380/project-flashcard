@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import SingleFlashCard from "../Components/SingleFlashCard";
+import SingleFlashCard from "./SingleFlashCard";
 import "../index.css";
 import { Link } from "react-router-dom";
 import { GiClick } from "react-icons/gi";
